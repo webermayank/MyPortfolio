@@ -3,6 +3,7 @@ import { ProjectsContent } from "./sections/Projects";
 import { AboutContent } from "./sections/About";
 import { ContactContent } from "./sections/Contact";
 import { useTypewriter } from "../hooks/useTypewriter";
+import { SkillsContent } from "./sections/Skills";
 
 interface TerminalBodyProps {
   ref: React.RefObject<HTMLDivElement>;
@@ -18,6 +19,7 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
       p: "projects",
       a: "about",
       c: "contact",
+      s: "skills"
     };
 
     const welcomeText = [
@@ -28,6 +30,7 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
       "1> Projects",
       "2> About",
       "3> Contact",
+      "4> Skills"
     ];
 
     const displayedLines = useTypewriter(welcomeText, 20, 100);
@@ -57,6 +60,12 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
           setOutput(ContactContent);
           setCurrentPath("~/home/contact");
           break;
+        case "skills":
+        case "4":
+          setOutput(SkillsContent);
+          setCurrentPath("~/home/skills");
+          break;
+          
         case "..":
           // Reset to welcome text with animation
           setOutput([]);
@@ -121,7 +130,7 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
         } else {
           const path = command.startsWith("cd ") ? command.slice(3) : command;
 
-          if (["projects", "1", "about", "2", "contact", "3"].includes(path)) {
+          if (["projects", "1", "about", "2", "contact", "3" , "skills", "4"].includes(path)) {
             handleNavigation(path);
           } else {
             setOutput([
@@ -154,7 +163,8 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
             className={`text-terminal-gray text-2xl mb-2 cursor-pointer font-semibold tracking-wide ${
               line.startsWith("1>") ||
               line.startsWith("2>") ||
-              line.startsWith("3>")
+              line.startsWith("3>") ||
+              line.startsWith("4>")
                 ? "hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-200 ease-in-out"
                 : ""
             }`}
@@ -162,6 +172,7 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
               if (line.startsWith("1>")) handleClick("projects");
               if (line.startsWith("2>")) handleClick("about");
               if (line.startsWith("3>")) handleClick("contact");
+              if (line.startsWith("4>")) handleClick("skills");
             }}
             dangerouslySetInnerHTML={{ __html: line }} // ✅ Fix applied
           />

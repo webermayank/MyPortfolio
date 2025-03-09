@@ -14,6 +14,7 @@ export default {
           yellow: "#FFFF00",
           redText: "#fc1111",
           linkBlue: "#008cff",
+          background: "#261c29",
         },
       },
       fontFamily: {

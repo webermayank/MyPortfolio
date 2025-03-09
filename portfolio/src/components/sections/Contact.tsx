@@ -2,6 +2,7 @@ const email: string = "mailto:mayankkumarverma4@gmail.com";
 const name: string = "Mayank Kumar Verma";
 const github: string = "https://github.com/webermayank";
 const instagram: string = "https://www.instagram.com/mynk_vrma";
+const discord: string = "mayankdev_";
 const Twitter: string = "https://x.com/MayankV0611";
 const linkedin: string =
   "https://www.linkedin.com/in/mayank-kumar-verma-17a5b72a2/";
@@ -13,6 +14,7 @@ export const ContactContent = [
   `• GitHub: <a href="${github}" class="text-blue-500 hover:underline">webermayank</a>`,
   `• ArtPage-Instagram: <a href="${instagram}" class="text-blue-500 hover:underline">mynk_vrma</a>`,
   `• Twitter: <a href="${Twitter}" class="text-blue-500 hover:underline">MayankV0611</a>`,
+  `• Discord Username: <a href="" class="text-blue-500 hover:underline">mayankdev_</a>`,
   "",
   "Type 'cd ..' or '..' or click on home to go back",
 ];

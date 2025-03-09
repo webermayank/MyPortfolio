@@ -8,17 +8,7 @@ const Terminal: React.FC = () => {
   const terminalRef = useRef<HTMLDivElement>(null);
 
   // Available paths/files for navigation
-  const fileSystem = {
-    "~/Desktop/projects/portfolio": {
-      type: "directory",
-      contents: ["src", "public", "node_modules"],
-    },
-    "~/Desktop/projects/portfolio/src": {
-      type: "directory",
-      contents: ["components", "assets", "App.tsx", "main.tsx", "index.css"],
-    },
-    // Add more paths as needed
-  };
+  
 
   // Focus terminal on load
   useEffect(() => {

@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-terminal bg-white flex justify-center items-center h-screen m-0 p-0;
+    @apply font-terminal bg-terminal-background flex justify-center items-center h-screen m-0 p-0;
   }
 }
 
