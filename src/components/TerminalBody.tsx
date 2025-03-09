@@ -10,9 +10,8 @@ interface TerminalBodyProps {
 }
 
 const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
-  (props, ref) => {
+  (_props, ref) => {
     const [currentPath, setCurrentPath] = useState("~/home");
-    props = "mayank";
     // Define available commands for tab completion
     const availableCommands = {
       p: "projects",
