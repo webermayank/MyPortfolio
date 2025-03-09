@@ -164,13 +164,13 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
     return (
       <div
         ref={ref}
-        className="flex-1 bg-black p-6 overflow-y-auto flex flex-col rounded-lg"
+        className="flex-1 bg-black p-6 overflow-y-auto flex flex-col rounded-lg font-mono"
       >
         {/* Menu Output */}
         {(output.length > 0 ? output : displayedLines).map((line, index) => (
           <div
             key={index}
-            className={`text-terminal-gray text-2xl mb-2 cursor-pointer font-semibold tracking-wide ${
+            className={`text-terminal-gray text-base sm:text-lg mb-2 cursor-pointer font-normal tracking-wide ${
               line.startsWith("1>") ||
               line.startsWith("2>") ||
               line.startsWith("3>") ||
@@ -184,12 +184,12 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
               if (line.startsWith("3>")) handleClick("contact");
               if (line.startsWith("4>")) handleClick("skills");
             }}
-            dangerouslySetInnerHTML={{ __html: line }} // ✅ Fix applied
+            dangerouslySetInnerHTML={{ __html: line }}
           />
         ))}
 
         {/* Current Input Line - Only show at the bottom */}
-        <div className="text-2xl mt-4 flex items-center">
+        <div className="text-base mt-4 flex items-center">
           <span className="text-terminal-green">Mayank Verma &nbsp;</span>
           <span
             className="text-terminal-yellow cursor-pointer hover:text-yellow-300"
@@ -199,10 +199,10 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
           </span>
         </div>
         <div className="flex items-center">
-          <span className="text-terminal-gray text-2xl">$ </span>
+          <span className="text-terminal-gray text-base">$ </span>
           <div
             ref={ref}
-            className="text-terminal-gray outline-none whitespace-pre-wrap break-words leading-relaxed text-2xl flex-1"
+            className="text-terminal-gray outline-none whitespace-pre-wrap break-words leading-relaxed text-base flex-1"
             contentEditable={true}
             suppressContentEditableWarning={true}
             onKeyDown={handleKeyDown}

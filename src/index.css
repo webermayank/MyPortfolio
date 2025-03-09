@@ -4,15 +4,15 @@
 
 @layer base {
   body {
-    @apply font-terminal bg-terminal-background flex justify-center items-center h-screen m-0 p-0;
+    @apply font-terminal bg-terminal-background flex justify-center items-center min-h-screen m-0 p-0;
   }
 }
 html, body {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 14px;
+  font-family: Consolas, 'Courier New', monospace;
 }
-
 
 @layer components {
   .blinking-cursor::after {
@@ -31,4 +31,28 @@ html, body {
       opacity: 0;
     }
   }
+}
+
+/* Monospace font for terminal text */
+.font-mono {
+  font-family: Consolas, 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

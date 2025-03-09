@@ -8,17 +8,17 @@ const TerminalHeader: React.FC<TerminalHeaderProps> = ({ title }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="bg-terminal-darkBlue h-14 flex items-center px-4 relative">
+    <div className="bg-terminal-darkBlue h-8 sm:h-10 flex items-center px-4 relative">
       <div
         className="flex gap-2"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Close button */}
-        <div className="w-3.5 h-3.5 bg-[#ff5f56] rounded-full flex items-center justify-center group">
+        <div className="w-3 h-3 bg-[#ff5f56] rounded-full flex items-center justify-center group">
           {isHovered && (
             <svg
-              className="w-[8px] h-[8px] text-[#4c0000] opacity-0 group-hover:opacity-100"
+              className="w-[6px] h-[6px] text-[#4c0000] opacity-0 group-hover:opacity-100"
               viewBox="0 0 10 10"
               strokeWidth="1.5"
               stroke="currentColor"
@@ -29,10 +29,10 @@ const TerminalHeader: React.FC<TerminalHeaderProps> = ({ title }) => {
         </div>
 
         {/* Minimize button */}
-        <div className="w-3.5 h-3.5 bg-[#ffbd2e] rounded-full flex items-center justify-center group">
+        <div className="w-3 h-3 bg-[#ffbd2e] rounded-full flex items-center justify-center group">
           {isHovered && (
             <svg
-              className="w-[8px] h-[8px] text-[#995700] opacity-0 group-hover:opacity-100"
+              className="w-[6px] h-[6px] text-[#995700] opacity-0 group-hover:opacity-100"
               viewBox="0 0 10 10"
               strokeWidth="1.5"
               stroke="currentColor"
@@ -43,10 +43,10 @@ const TerminalHeader: React.FC<TerminalHeaderProps> = ({ title }) => {
         </div>
 
         {/* Expand button */}
-        <div className="w-3.5 h-3.5 bg-[#27c93f] rounded-full flex items-center justify-center group">
+        <div className="w-3 h-3 bg-[#27c93f] rounded-full flex items-center justify-center group">
           {isHovered && (
             <svg
-              className="w-[8px] h-[8px] text-[#006500] opacity-0 group-hover:opacity-100"
+              className="w-[6px] h-[6px] text-[#006500] opacity-0 group-hover:opacity-100"
               viewBox="0 0 10 10"
               strokeWidth="1.5"
               stroke="currentColor"
@@ -58,7 +58,7 @@ const TerminalHeader: React.FC<TerminalHeaderProps> = ({ title }) => {
         </div>
       </div>
 
-      <div className="absolute left-0 right-0 text-center text-terminal-gray text-2xl font-semibold">
+      <div className="absolute left-0 right-0 text-center text-terminal-gray text-sm sm:text-base font-normal tracking-wider">
         {title}
       </div>
     </div>
