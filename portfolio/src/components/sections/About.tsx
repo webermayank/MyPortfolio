@@ -1,0 +1,15 @@
+export const AboutContent = [
+  "About Me:",
+  "I'm a Full Stack Developer more specialize in Backend Technologies ",
+  "passionate about creating innovative solutions using modern technologies.",
+  "",
+  "Skills:",
+  "• Languages:Javascript, Typescript, Java",
+  "• Frontend: React, Astro docs, Tailwind CSS",
+  "• Backend: Node.js, Express",
+  "• Databases: MongoDB, PostgreSQL, MySQL",
+  "• Testing: Jest, Nightwatch",
+  "• Tools: Git, Github Actions, Docker",
+  "",
+  "Type 'cd ..' or click on home to go back  ",
+];

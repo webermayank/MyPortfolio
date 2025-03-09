@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-terminal bg-white flex justify-center items-center h-screen m-0 p-0;
+  }
+}
+
+@layer components {
+  .blinking-cursor::after {
+    content: "|";
+    @apply inline text-terminal-gray;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}
