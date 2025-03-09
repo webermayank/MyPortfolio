@@ -151,22 +151,20 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
         {(output.length > 0 ? output : displayedLines).map((line, index) => (
           <div
             key={index}
-            className={`text-terminal-gray text-2xl mb-2 cursor-pointer font-semibold tracking-wide
-              ${
-                line.startsWith("1>") ||
-                line.startsWith("2>") ||
-                line.startsWith("3>")
-                  ? "hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-200 ease-in-out"
-                  : ""
-              }`}
+            className={`text-terminal-gray text-2xl mb-2 cursor-pointer font-semibold tracking-wide ${
+              line.startsWith("1>") ||
+              line.startsWith("2>") ||
+              line.startsWith("3>")
+                ? "hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-200 ease-in-out"
+                : ""
+            }`}
             onClick={() => {
               if (line.startsWith("1>")) handleClick("projects");
               if (line.startsWith("2>")) handleClick("about");
               if (line.startsWith("3>")) handleClick("contact");
             }}
-          >
-            {line}
-          </div>
+            dangerouslySetInnerHTML={{ __html: line }} // ✅ Fix applied
+          />
         ))}
 
         {/* Current Input Line - Only show at the bottom */}

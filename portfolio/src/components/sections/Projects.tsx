@@ -1,12 +1,13 @@
+const github: string = "https://github.com/webermayank";
+const webhis: string =
+  "https://drive.google.com/file/d/1ilEq17QNPAR83-cNNp6POEK-FTei95LC/view";
+
+  const laceverse: string = "https://github.com/webermayank/laceverse-code";
 export const ProjectsContent = [
-  "My Projects:",
-  "- Web Development",
-  "  • Portfolio Website (React + TypeScript)",
-  "  • E-commerce Platform (MERN Stack)",
-  "- Mobile Apps",
-  "  • Fitness Tracker (React Native)",
-  "- AI/ML Projects",
-  "  • Image Recognition System",
+  "My Works:",
+  `Open Source Contributions - <a href="${github}" class="text-blue-500 hover:underline">webermayank</a>`,
+  `<a href="${webhis}" class=""><span class="text-terminal-linkBlue text-2xl">WebHis </span></a>: Chrome Extension for Enhanced URL History Tracking and Search Query Extraction`,
+  `<a href="${laceverse}" class=""><span class="text-terminal-linkBlue text-2xl">LaceVerse </span></a>: Metaverse Gaming + Chatting Simulator(UD)`,
   "",
-  "Type 'cd ..' or click on home to go back",
+  "Type 'cd ..' or '..' or click on home to go back",
 ];
