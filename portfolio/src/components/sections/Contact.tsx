@@ -2,7 +2,7 @@ const email: string = "mailto:mayankkumarverma4@gmail.com";
 const name: string = "Mayank Kumar Verma";
 const github: string = "https://github.com/webermayank";
 const instagram: string = "https://www.instagram.com/mynk_vrma";
-const discord: string = "mayankdev_";
+// const discord: string = "mayankdev_";
 const Twitter: string = "https://x.com/MayankV0611";
 const linkedin: string =
   "https://www.linkedin.com/in/mayank-kumar-verma-17a5b72a2/";
