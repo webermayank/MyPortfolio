@@ -6,20 +6,19 @@ import { useTypewriter } from "../hooks/useTypewriter";
 import { SkillsContent } from "./sections/Skills";
 
 interface TerminalBodyProps {
-  ref: React.RefObject<HTMLDivElement>;
+  ref?: React.Ref<HTMLDivElement>;
 }
 
 const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
   (props, ref) => {
-    const [commands, setCommands] = useState<string[]>([]);
     const [currentPath, setCurrentPath] = useState("~/home");
-
+    props = "mayank";
     // Define available commands for tab completion
     const availableCommands = {
       p: "projects",
       a: "about",
       c: "contact",
-      s: "skills"
+      s: "skills",
     };
 
     const welcomeText = [
@@ -30,7 +29,7 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
       "1> Projects",
       "2> About",
       "3> Contact",
-      "4> Skills"
+      "4> Skills",
     ];
 
     const displayedLines = useTypewriter(welcomeText, 20, 100);
@@ -65,7 +64,7 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
           setOutput(SkillsContent);
           setCurrentPath("~/home/skills");
           break;
-          
+
         case "..":
           // Reset to welcome text with animation
           setOutput([]);
@@ -130,7 +129,18 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
         } else {
           const path = command.startsWith("cd ") ? command.slice(3) : command;
 
-          if (["projects", "1", "about", "2", "contact", "3" , "skills", "4"].includes(path)) {
+          if (
+            [
+              "projects",
+              "1",
+              "about",
+              "2",
+              "contact",
+              "3",
+              "skills",
+              "4",
+            ].includes(path)
+          ) {
             handleNavigation(path);
           } else {
             setOutput([
@@ -144,18 +154,19 @@ const TerminalBody = forwardRef<HTMLDivElement, TerminalBodyProps>(
           }
         }
 
-        setCommands((prev) => [...prev, command]);
         e.currentTarget.textContent = "";
       }
     };
 
     const handleClick = (option: string) => {
       handleNavigation(option);
-      setCommands((prev) => [...prev, `cd ${option}`]);
     };
 
     return (
-      <div className="flex-1 bg-black p-6 overflow-y-auto flex flex-col rounded-lg">
+      <div
+        ref={ref}
+        className="flex-1 bg-black p-6 overflow-y-auto flex flex-col rounded-lg"
+      >
         {/* Menu Output */}
         {(output.length > 0 ? output : displayedLines).map((line, index) => (
           <div
