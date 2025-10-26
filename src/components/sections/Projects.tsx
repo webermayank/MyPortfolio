@@ -8,7 +8,7 @@ const Felion: string = "https://youth-mental-wellness-brown.vercel.app/";
 export const ProjectsContent = [
   "My Works:",
   `Open Source Contributions - <a href="${github}" class="text-blue-500 hover:underline">webermayank</a>`,
-  `<a href="${Felion}" class=""><span class="text-terminal-linkBlue text-2xl">Syncpad </span></a>: – Youth Mental Wellness Platform`,
+  `<a href="${Felion}" class=""><span class="text-terminal-linkBlue text-2xl">Felion </span></a>: – Youth Mental Wellness Platform`,
   `<a href="${Syncpad}" class=""><span class="text-terminal-linkBlue text-2xl">Syncpad </span></a>: – AI based Text Editor`,
   `<a href="${webhis}" class=""><span class="text-terminal-linkBlue text-2xl">WebHis </span></a>: Chrome Extension for Enhanced URL History Tracking and Search Query Extraction`,
   `<a href="${laceverse}" class=""><span class="text-terminal-linkBlue text-2xl">LaceVerse </span></a>: Metaverse Gaming + Chatting Simulator(UD)`,
